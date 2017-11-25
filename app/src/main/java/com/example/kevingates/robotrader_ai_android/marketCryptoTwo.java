@@ -4,11 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -24,23 +28,32 @@ public class marketCryptoTwo extends AppCompatActivity {
 
     public void putDataToListViewMultipleColumns()
     {
+        TextView TextView1 = (TextView) findViewById(R.id.currency);
+        TextView1.setText("BTC");
+
         try {
+
             String jsonStr = marketJsonData();
 
             JSONObject jsonObj = new JSONObject(jsonStr);
-            JSONObject prices = jsonObj.getJSONObject("prices");
+
+            JSONObject btc = jsonObj.getJSONObject("prices").getJSONObject("BTC");
             JSONObject exchangeCountries = jsonObj.getJSONObject("exchangeCountries");
 
-            ArrayList<User> users = new ArrayList<User>();
-
-            Iterator<String> exchangeCountrykeys = exchangeCountries.keys();
+            ArrayList<Exchange> Exchanges = new ArrayList<Exchange>();
+            Iterator<String> exchangeCountrykeys = btc.keys();
             while (exchangeCountrykeys.hasNext()) {
-                String keyStr = (String)exchangeCountrykeys.next();
-                String valueStr = exchangeCountries.getString(keyStr);
+                String key = (String)exchangeCountrykeys.next();
+                String value = btc.getString(key);
+                JSONObject currentExchange = btc.getJSONObject(key);
+                String buy = currentExchange.getString("buy");
+                String sell = currentExchange.getString("sell");
 
-                users.add(new User(keyStr, valueStr));
+                String country = exchangeCountries.getString(key);
+
+                Exchanges.add(new Exchange(key, country.substring(0,3),buy,sell));
             }
-            CustomCryptoAdapter adapter = new CustomCryptoAdapter(this, users);
+            CustomCryptoAdapter adapter = new CustomCryptoAdapter(this, Exchanges);
 
             ListView listView = (ListView) findViewById(R.id.listView1);
             listView.setAdapter(adapter);

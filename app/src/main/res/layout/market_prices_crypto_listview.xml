@@ -5,14 +5,39 @@
 
     <TextView
         android:id="@+id/exchange"
-        android:layout_alignBaseline="@+id/ivUserIcon"
-        android:layout_toRightOf="@+id/ivUserIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/country"
+        android:layout_alignBottom="@+id/country"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
         android:paddingRight="6dp"
-        android:text="exchange"
-        />
+        android:text="exchange" />
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buy"
+        android:layout_alignBottom="@+id/buy"
+        android:layout_toEndOf="@+id/exchange"
+        android:layout_toRightOf="@+id/exchange"
+        android:paddingRight="6dp"
+        android:text="country" />
+
+    <TextView
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sell"
+        android:layout_alignBottom="@+id/sell"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_toEndOf="@+id/country"
+        android:layout_toRightOf="@+id/country"
+        android:paddingRight="6dp"
+        android:text="buy" />
 
     <TextView
         android:id="@+id/sell"
@@ -21,8 +46,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="22dp"
         android:paddingRight="6dp"
         android:text="sell" />
 

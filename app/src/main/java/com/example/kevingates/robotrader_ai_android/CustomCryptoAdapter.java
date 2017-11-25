@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CustomCryptoAdapter extends ArrayAdapter<User> {
-    public CustomCryptoAdapter(Context context, ArrayList<User> users) {
+public class CustomCryptoAdapter extends ArrayAdapter<Exchange> {
+    public CustomCryptoAdapter(Context context, ArrayList<Exchange> users) {
         super(context, 0, users);
     }
 
@@ -26,13 +26,17 @@ public class CustomCryptoAdapter extends ArrayAdapter<User> {
         }
 
         // Get the data item for this position
-        User user = getItem(position);
+        Exchange exchange = getItem(position);
 
-        TextView exchange = (TextView) convertView.findViewById(R.id.exchange);
+        TextView exchangeText = (TextView) convertView.findViewById(R.id.exchange);
+        TextView country = (TextView) convertView.findViewById(R.id.country);
+        TextView buy = (TextView) convertView.findViewById(R.id.buy);
         TextView sell = (TextView) convertView.findViewById(R.id.sell);
 
-        exchange.setText(user.getName());
-        sell.setText(user.getHometown());
+        exchangeText.setText(exchange.getExchange());
+        country.setText(exchange.getCountry());
+        buy.setText(exchange.getBuy());
+        sell.setText(exchange.getSell());
 
         return convertView;
     }
