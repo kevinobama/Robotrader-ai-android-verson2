@@ -26,13 +26,35 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="17dp"
         android:layout_toEndOf="@+id/button2"
         android:layout_toRightOf="@+id/button2"
-        android:text="Crypto Market Price"
-        android:onClick="marketCrypto" />
+        android:onClick="marketCrypto"
+        android:text="Crypto Market Price" />
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="22dp"
+        android:onClick="marketCryptoOne"
+        android:text="Crypto Market Price One" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button6"
+        android:layout_marginTop="13dp"
+        android:layout_toLeftOf="@+id/button5"
+        android:layout_toStartOf="@+id/button5"
+        android:onClick="marketCryptoTwo"
+        android:text="marketCryptoTwo" />
 
 </RelativeLayout>

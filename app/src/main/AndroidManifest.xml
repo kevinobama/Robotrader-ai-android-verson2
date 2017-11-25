@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListViewExampleActivity" />
-        <activity android:name=".marketCrypto"></activity>
+        <activity android:name=".marketCrypto" />
+        <activity android:name=".marketCryptoOne" />
+        <activity android:name=".marketCryptoTwo"></activity>
     </application>
 
 </manifest>

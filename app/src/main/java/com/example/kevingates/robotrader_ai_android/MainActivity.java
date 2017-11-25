@@ -35,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    public void marketCryptoOne(View View)
+    {
+        Intent myIntent = new Intent(MainActivity.this, marketCryptoOne.class);
+        startActivity(myIntent);
+    }
+
+    public void marketCryptoTwo(View View)
+    {
+        Intent myIntent = new Intent(MainActivity.this, marketCryptoTwo.class);
+        startActivity(myIntent);
+    }
+
     public void openActivity(View View)
     {
         Intent myIntent = new Intent(MainActivity.this, ListViewExampleActivity.class);
